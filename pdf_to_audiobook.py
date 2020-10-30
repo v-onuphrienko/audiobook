@@ -5,7 +5,7 @@ from gtts import gTTS
 import streamlit as st
 import streamlit.components.v1 as components
 
-st.set_page_config(page_title="Research : Audiofy",page_icon="🎶",layout="centered",initial_sidebar_state="auto",)
+st.set_page_config(page_title="Audiofy (Convert PDF files to Audio)",page_icon="🎶",layout="centered",initial_sidebar_state="auto",)
 
 def pypdf2(py_pdf_file):
 	#py_pdf_file = open(py_pdf_file, 'rb') 
@@ -60,9 +60,9 @@ stylize()
 with open("style.css") as f:
     st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
-st.markdown("<h1 style='text-align: center ; color: black;'>Research : Audiofy 🎶</h1>", unsafe_allow_html=True)
-st.markdown("<h2 style='text-align: center ; color: black;'><strong>by M. Sreenidhi Iyengar & M. Harika</strong></h2>", unsafe_allow_html=True)
-
+st.markdown("<h1 style='text-align: center ; color: black;'>Audiofy 🎶</h1>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center ; color: black;'><strong>Convert PDF File to Audio</strong></h2>", unsafe_allow_html=True)
+st.markdown("<h6 style='text-align: center ; color: black;'><strong>by M. Sreenidhi Iyengar</strong></h6>", unsafe_allow_html=True)
 uploaded_file = st.file_uploader("Choose a Pdf file", type=["pdf"])
 
 text = audio_file_name = None
