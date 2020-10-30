@@ -62,7 +62,8 @@ with open("style.css") as f:
 
 st.markdown("<h1 style='text-align: center ; color: black;'>Audiofy 🎶</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center ; color: black;'><strong>Convert PDF File to Audio File</strong></h3>", unsafe_allow_html=True)
-#st.markdown("<h6 style='text-align: center ; color: black;'><strong>by M. Sreenidhi Iyengar</strong></h6>", unsafe_allow_html=True)
+st.sidebar.markdown("<h3 style='text-align: center ; color: black;'><strong>by M. Sreenidhi Iyengar</strong></h3>", unsafe_allow_html=True)
+
 uploaded_file = st.file_uploader("Choose a Pdf file", type=["pdf"])
 
 text = audio_file_name = None
@@ -70,9 +71,13 @@ text = audio_file_name = None
 if uploaded_file is not None:
 	text = pypdf2(uploaded_file)
 	audio_file_name = text_to_speech(text, uploaded_file.name)
-
+	
 	audio_file = open(audio_file_name, 'rb')
 	audio_bytes = audio_file.read()
 	st.audio(audio_bytes, format='audio/mp3')
+	
+	with st.beta_expander("Display Text"):
+		st.write(text)
+	
 	audio_file.close()
 	os.remove(audio_file_name)
