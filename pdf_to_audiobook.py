@@ -22,7 +22,11 @@ def pypdf2(py_pdf_file):
 		# obtain page no.
 		pageObj = pdfReader.getPage(i)
 		# append page content to list
-		text_lst.append('\n' + pageObj.extractText())
+		try:
+			data = pageObj.extractText()
+		except:
+			pass
+		text_lst.append('\n' + data)
 	# close the PDF file object
 	py_pdf_file.close()
 	# join all pages text into single string variable
