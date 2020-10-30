@@ -61,8 +61,8 @@ with open("style.css") as f:
     st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
 st.markdown("<h1 style='text-align: center ; color: black;'>Audiofy 🎶</h1>", unsafe_allow_html=True)
-st.markdown("<h2 style='text-align: center ; color: black;'><strong>Convert PDF File to Audio</strong></h2>", unsafe_allow_html=True)
-st.markdown("<h6 style='text-align: center ; color: black;'><strong>by M. Sreenidhi Iyengar</strong></h6>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center ; color: black;'><strong>Convert PDF File to Audio</strong></h3>", unsafe_allow_html=True)
+#st.markdown("<h6 style='text-align: center ; color: black;'><strong>by M. Sreenidhi Iyengar</strong></h6>", unsafe_allow_html=True)
 uploaded_file = st.file_uploader("Choose a Pdf file", type=["pdf"])
 
 text = audio_file_name = None
