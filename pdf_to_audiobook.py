@@ -14,7 +14,7 @@ def pypdf2(py_pdf_file):
 	# obtain no, of pages
 	numOfPages = pdfReader.getNumPages()
 	# final return text string
-	text = "PDF File name : " + str(pdfReader.getDocumentInfo().title + '\n')
+	text = "PDF File name : " + str(pdfReader.getDocumentInfo().title) + '\n')
 	# text list to contain all pdf text 
 	text_lst = list()
 	# itterate over all pages
